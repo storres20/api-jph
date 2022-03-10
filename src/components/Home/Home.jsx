@@ -25,29 +25,38 @@ const Home = () => {
     const data = await fetch('https://jsonplaceholder.typicode.com/users');
     const users = await data.json();
     //console.log(users);
+    document.title = 'consumo de API'
     setEquipo(users); //datos dinamicos al ESTADO
   }
 
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Consumo de API - Json PlaceHolder</h1>
 
-      <table class="table">
+      <table class="table table-hover table-striped">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Username</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Website</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
+
+          {
+            equipo.map(item => (
+              <tr key={item.id}>
+                <th scope="row">{item.username} </th>
+                <td>{item.name} </td>
+                <td>{item.email} </td>
+                <td>{item.phone} </td>
+                <td>{item.website} </td>
+              </tr>
+            ))
+          }
+
         </tbody>
       </table>
     </div>
