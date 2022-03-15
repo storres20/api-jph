@@ -9,7 +9,7 @@ const Home = () => {
     {id:3, nombre:'Angularjs'}
   ] */
 
-
+  const [allData, setAllData] = useState([]);
   const [equipo, setEquipo] = useState([])
 
 
@@ -27,13 +27,39 @@ const Home = () => {
     //console.log(users);
     document.title = 'consumo de API'
     setEquipo(users); //datos dinamicos al ESTADO
+    setAllData(users); //datos dinamicos al ESTADO
+  }
+
+  const handleSearch = (event) => {
+    const keyword = event.target.value;
+
+    if (keyword !== '') {
+      const results = allData.filter((user) => {
+        return user.name.toLowerCase().startsWith(keyword.toLowerCase()) ||
+        user.username.toLowerCase().startsWith(keyword.toLowerCase()) ||
+        user.email.toLowerCase().startsWith(keyword.toLowerCase()) ||
+        user.phone.toLowerCase().startsWith(keyword.toLowerCase()) ||
+        user.website.toLowerCase().startsWith(keyword.toLowerCase())
+        ;
+        // Use the toLowerCase() method to make it case-insensitive
+      });
+
+      setEquipo(results);
+
+    } else {
+      setEquipo(allData);
+      // If the text field is empty, show all users
+    }
+
   }
 
   return (
     <div>
       <h1>Consumo de API - Json PlaceHolder</h1>
 
-      <table class="table table-hover table-striped">
+      <input type="text" placeholder='Search...' onChange={event => handleSearch(event)} />
+
+      <table className="table table-hover table-striped">
         <thead>
           <tr>
             <th scope="col">Username</th>
@@ -45,16 +71,24 @@ const Home = () => {
         </thead>
         <tbody>
 
-          {
-            equipo.map(item => (
-              <tr key={item.id}>
-                <th scope="row">{item.username} </th>
-                <td>{item.name} </td>
-                <td>{item.email} </td>
-                <td>{item.phone} </td>
-                <td>{item.website} </td>
-              </tr>
-            ))
+
+
+
+          {(equipo === []) ? (
+            <h1>No existen coincidencias</h1>
+          )
+            :
+            (
+              equipo.map(item => (
+                <tr key={item.id}>
+                  <th scope="row">{item.username} </th>
+                  <td>{item.name} </td>
+                  <td>{item.email} </td>
+                  <td>{item.phone} </td>
+                  <td>{item.website} </td>
+                </tr>
+              ))
+            )
           }
 
         </tbody>
