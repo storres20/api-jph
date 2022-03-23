@@ -35,11 +35,11 @@ const Home = () => {
 
     if (keyword !== '') {
       const results = allData.filter((user) => {
-        return user.name.toLowerCase().startsWith(keyword.toLowerCase()) ||
-        user.username.toLowerCase().startsWith(keyword.toLowerCase()) ||
-        user.email.toLowerCase().startsWith(keyword.toLowerCase()) ||
-        user.phone.toLowerCase().startsWith(keyword.toLowerCase()) ||
-        user.website.toLowerCase().startsWith(keyword.toLowerCase())
+        return user.name.toLowerCase().includes(keyword.toLowerCase()) ||
+        user.username.toLowerCase().includes(keyword.toLowerCase()) ||
+        user.email.toLowerCase().includes(keyword.toLowerCase()) ||
+        user.phone.toLowerCase().includes(keyword.toLowerCase()) ||
+        user.website.toLowerCase().includes(keyword.toLowerCase())
         ;
         // Use the toLowerCase() method to make it case-insensitive
       });
