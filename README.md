@@ -16,7 +16,7 @@
 
 💻📱 **JsonPlaceHolder - Frontend** 💻📱 es una aplicacion web que muestra los datos personales de usuarios 💻💻💻
 
-La web app realiza consultas de PETICION a la API de JsonPlaceHolder acerca de datos personales de usuarios y envia las respuestas al cliente, respecto a los datos de los clientes (nombre, correo, direccion, telefono, etc).
+La web app realiza consultas de PETICION a la API de JsonPlaceHolder acerca de datos personales de usuarios y envia las respuestas al cliente, como nombre, correo, direccion, telefono, etc.
 
 Cabe resaltar que JsonPlaceHolder tiene una bateria de datos solo de prueba y no son reales.
 
@@ -24,8 +24,8 @@ Puedes acceder a traves de: <a href="https://api-jph.netlify.app/" target="_blan
 
 ## Guía de usuario
 ---
-Elaborada para consumir una API y mostrar la DATA obtenida en una TABLE en una website
-La API usada es de la web de Json PlaceHolder
+Elaborada para consumir una `API` y mostrar la `DATA` obtenida en una `TABLE` en una website
+La `API` usada es de la web de `JsonPlaceHolder`
 <a href="https://jsonplaceholder.typicode.com/users" target="_blank">https://jsonplaceholder.typicode.com/users</a>
 
 ```json
