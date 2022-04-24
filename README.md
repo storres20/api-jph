@@ -83,13 +83,8 @@ Tecnologias utilizadas
 | Bootstrap |  |  |
 
 
-## 🌱 Beta version
-Pagina web
+### 💻Pagina web: 📱
 <ul>
-<li> <a href="https://api-jph.netlify.app/" target="_blank">https://api-jph.netlify.app/</a> </li>
-</ul>
-
-## 🎨 Maquetado - Figma
-<ul>
-<li> Coming Soon </li>
+<li> Frontend: <a href="https://api-jph.netlify.app/" target="_blank">https://api-jph.netlify.app/</a> </li>
+<li> API: <a href="https://jsonplaceholder.typicode.com/users" target="_blank">https://jsonplaceholder.typicode.com/users</a> </li>
 </ul>
